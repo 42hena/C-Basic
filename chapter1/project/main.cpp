@@ -25,6 +25,45 @@ void MakeAccount()
     cnt++;
 }
 
+void DepositAccount()
+{
+    int num;
+    cout << "[Account Deposit]\n";
+    cout << "Account ID: ";
+    cin >> num;
+    int id;
+    for (int i = 0 ; i < cnt ; i++)
+    {
+        if (num == info[i].accountId){
+            id = i;
+            break;
+        }
+    }
+    cout << "Deposit amount";
+    cin >> num;
+    info[id].depoisitMoney += num;
+    cout << "Deposit Complete\n";
+}
+
+void WithdrawAccount()
+{
+    int num;
+    cout << "[Account Withdraw]\n";
+    cout << "Account ID: ";
+    cin >> num;
+    int id;
+    for (int i = 0 ; i < cnt ; i++)
+    {
+        if (num == info[i].accountId){
+            id = i;
+            break;
+        }
+    }
+    cout << "Withdraw amount";
+    cin >> num;
+    info[id].depoisitMoney -= num;
+    cout << "Withdraw Complete\n";
+}
 void PrintAccount()
 {
     for (int i = 0 ; i < cnt ; i++)
@@ -53,6 +92,12 @@ int main(void)
         {
             case 1:
                 MakeAccount();
+                break;
+            case 2:
+                DepositAccount();
+                break;
+            case 3:
+                WithdrawAccount();
                 break;
             case 4:
                 PrintAccount();
