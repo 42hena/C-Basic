@@ -22,3 +22,14 @@ int main(void)
     MyFunc(12, 13);
     return 0;
 }
+/*
+해설
+20행: 3행의 함수를 호출하는 문장이다.
+21행: 8행의 함수를 호출하는 문장이다.
+22행: 13행의 함수를 호출하는 문장이다.
+
+실행 결과
+Myfunc(void) called
+Myfunc(char c) called
+Myfunc(int a, int b) called
+*/
