@@ -57,14 +57,31 @@ public:
 
 int main(void)
 {
+    // 직원 관리를 목적으로 설계된 컨트롤 클래스의 객체생성
     EmployeeHandler handelr;
 
+    // 직원 등록
     handelr.AddEmployee(new PermanentWorker("KIM", 1000));
     handelr.AddEmployee(new PermanentWorker("LEE", 1500));
     handelr.AddEmployee(new PermanentWorker("JUN", 2000));
 
+    // 이번 달에 지불해야 할 급여의 정보
     handelr.ShowAllSalaryInfo();
 
+    // 이번 달에 지불해야 할 급여의 총합
     handelr.ShowTotalSalary();
     return 0;
 }
+/*
+실행 결과
+name: KIM
+salary: 1000
+
+name: LEE
+salary: 1500
+
+name: JUN
+salary: 2000
+
+salary sum: 4500
+*/

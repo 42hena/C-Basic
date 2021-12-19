@@ -11,14 +11,18 @@ public:
     int num3;
 
     Base() : num1(1), num2(2), num3(3)
-    {    }
+    { }
 };
 
-class Derived : protected Base { };
+class Derived : protected Base { }; //empty
 
 int main(void)
 {
     Derived drv;
-    cout << drv.num3 << endl;
+    cout << drv.num3 << endl;       //컴파일 에러 발생!
     return 0;
 }
+/*
+실행결과
+error: 'int Base::num3' is inaccessible within this context
+*/

@@ -6,18 +6,14 @@ class SoBase
 private:
     int baseNum;
 public:
-    SoBase() : baseNum(20)
-    {
-        cout << "SoBase()" << endl;
-    }
     SoBase(int n) : baseNum(n)
     {
-        cout << "SoBase(int n)" << endl;
+        cout << "SoBase() : " << baseNum << endl;
     }
-    void ShowBaseData()
+    ~SoBase()
     {
-        cout << baseNum << endl;
-    }   
+        cout << "~SoBase() : " << baseNum << endl;
+    }
 };
 
 class SoDerived : public SoBase
@@ -25,37 +21,30 @@ class SoDerived : public SoBase
 private:
     int derivNum;
 public:
-    SoDerivied() : derivNum(30)
+    SoDerived(int n) : SoBase(n), derivNum(n)
     {
-        cout << "SoDerived()" << endl;
+        cout << "SoDerived() : " << derivNum << endl;
     }
-    SoDerivied(int n) : derivNum(n)
+    ~SoDerived()
     {
-        cout << "SoDerived(int n)" << endl;
-    }
-    SoDerivied(int n1, int n2) : SoBase(n1), derivNum(n2)
-    {
-        cout << "SoDerived(int n1, int n2)" << endl;
-    }
-    void ShowDerivData()
-    {
-        ShowBaseData();
-        cout << derivNum << endl;
+        cout << "~SoDerived() : " << derivNum << endl;
     }
 };
 
 int main(void)
 {
-    cout << "case1..... " << endl;
-    SoDerived dr1;
-    // dr1.ShowDerivData();
-    // cout << "---------------------" << endl;
-    // cout << "case2..... " << endl;
-    // SoDerived dr2(12);
-    // dr2.ShowDerivData();
-    // cout << "---------------------" << endl;
-    // cout << "case3..... " << endl;
-    // SoDerived dr3(23, 24);
-    // dr3.ShowDerivData();
+    SoDerived dr1(15);
+    SoDerived dr2(27);
     return 0;
 }
+/*
+실행결과
+SoBase() : 15
+SoDerived() : 15
+SoBase() : 27
+SoDerived() : 27
+~SoDerived() : 27
+~SoBase() : 27
+~SoDerived() : 15
+~SoBase() : 15
+*/

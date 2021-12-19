@@ -49,3 +49,13 @@ int main(void)
     ustd2.WhoAreYou();
     return 0;
 }
+/*
+실행 결과
+My name is Lee
+I'm 22 years old
+My major is Computer eng.
+
+My name is Yoon
+I'm 21 years old
+My major is Electronic eng.
+*/
