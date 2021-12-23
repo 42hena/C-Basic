@@ -17,11 +17,6 @@ public:
         Point pos(xpos * times, ypos * times);
         return pos;
     }
-    // Point operator*(int times, Point& pos1)
-    // {
-    //     Point pos(pos1.xpos * times, pos1.ypos * times);
-    //     return pos;
-    // }
     friend Point operator*(int times, Point& ref);
 };
 
@@ -43,3 +38,13 @@ int main(void)
     cpy.ShowPosition();
     return 0;
 }
+/*
+해설
+23행: 교환법칙의 성립을 목적으로 함수가 추가로 정의되었다.
+33행: 교환법칙이 성립됨을 보이고 있다.
+36행: 교환법칙이 성립되면, 자연스러운 연산문의 구성이 가능하다.
+
+실행결과
+[3, 6]
+[6, 12]
+*/
