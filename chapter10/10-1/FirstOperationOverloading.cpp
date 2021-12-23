@@ -12,9 +12,9 @@ public:
     {
         cout << '[' << xpos << ", " << ypos << ']' << endl;
     }
-    Point operator+(const Point &ref)
+    Point operator+(const Point &ref)   // operator라는 이름의 함수
     {
-        Point pos(xpos+ref.xpos, ypos+ref.ypos);
+        Point pos(xpos + ref.xpos, ypos + ref.ypos);
         return pos;
     }
 };
@@ -30,10 +30,11 @@ int main(void)
     pos3.ShowPosition();
     return 0;
 }
-
-//15행: 함수의 이름이 operator+이다. 조금 독특하다고 생각해도 좋다. 이름의 형태가 조금 어색하지만 분명히 이는 함수의 이름이다.
-//26행: pos1 객체의 맴버함수 operator+를 호출하면서 인자로 pow2객체를 전달하고 있다. 따라서 이 두 객체의 맴버 별 덧셈결과로 새로운 Point 객체가 만들어지고, 이것이 반환되어 pos3를 초기화하게 된다.(이 과정에서 복사 생성자가 호출된다.)
 /*
+해설
+15행: 함수의 이름이 operator+이다. 조금 독특하다고 생각해도 좋다. 이름의 형태가 조금 어색하지만 분명히 이는 함수의 이름이다.
+26행: pos1 객체의 맴버함수 operator+를 호출하면서 인자로 pow2객체를 전달하고 있다. 따라서 이 두 객체의 맴버 별 덧셈결과로 새로운 Point 객체가 만들어지고, 이것이 반환되어 pos3를 초기화하게 된다.(이 과정에서 복사 생성자가 호출된다.)
+
 실행 결과
 [3, 4]
 [10, 20]
